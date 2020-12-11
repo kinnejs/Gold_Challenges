@@ -1,0 +1,7 @@
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\bin\Debug\02_KomodoClaims_Console.exe.config
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\bin\Debug\02_KomodoClaims_Console.exe
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\bin\Debug\02_KomodoClaims_Console.pdb
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\obj\Debug\02_KomodoClaims_Console.csprojAssemblyReference.cache
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\obj\Debug\02_KomodoClaims_Console.csproj.CoreCompileInputs.cache
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\obj\Debug\02_KomodoClaims_Console.exe
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\02_KomodoClaims_Console\obj\Debug\02_KomodoClaims_Console.pdb
