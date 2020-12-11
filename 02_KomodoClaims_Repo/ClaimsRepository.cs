@@ -8,22 +8,22 @@ namespace _02_KomodoClaims_Repo
 {
     public class ClaimsRepository
     {
-        private List<Claims> _listOfClaims = new List<Claims>();
+        private Queue<Claims> _queueOfClaims = new Queue<Claims>();
 
         //Create
-        public void AddClaimToList(Claims claim)
+        public void AddClaimToQueue(Claims claim)
         {
-            _listOfClaims.Add(claim);
+            _queueOfClaims.Enqueue(claim);
         }
 
         //Read
-        public List<Claims> GetClaimsList()
+        public Queue<Claims> GetClaimsQueue()
         {
-            return _listOfClaims;
+            return _queueOfClaims;
         }
 
         //Update 
-        public bool UpdateExistingList(int originalClaimID, Claims newClaimId)
+        public bool UpdateExistingQueue(int originalClaimID, Claims newClaimId)
         {
             //Find the content
             Claims oldClaimID = GetClaimsByClaimID(originalClaimID);
@@ -47,7 +47,7 @@ namespace _02_KomodoClaims_Repo
         }
 
         //Delete
-        public bool RemoveClaimFromList(int claimID)
+        public bool RemoveClaimFromQueue(int claimID)
         {
             Claims claim = GetClaimsByClaimID(claimID);
 
@@ -56,10 +56,10 @@ namespace _02_KomodoClaims_Repo
                 return false;
             }
 
-            int begCount = _listOfClaims.Count;
-            _listOfClaims.Remove(claim);
+            int begCount = _queueOfClaims.Count;
+            _queueOfClaims.Dequeue();
 
-            if (begCount > _listOfClaims.Count)
+            if (begCount > _queueOfClaims.Count)
             {
                 return true;
             }
@@ -78,7 +78,7 @@ namespace _02_KomodoClaims_Repo
         //Helper Method
         public Claims GetClaimsByClaimID(int claimID)
         {
-            foreach(Claims claim in _listOfClaims)
+            foreach(Claims claim in _queueOfClaims)
             {
                 if(claim.ClaimID == claimID)
                 {

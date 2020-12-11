@@ -33,7 +33,7 @@ namespace _02_KomodoClaims_Repo
             }
         }
 
-        public Claims(int v) { }
+        public Claims() { }
         public Claims(int claimID, ClaimType claimType, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             ClaimID = claimID;

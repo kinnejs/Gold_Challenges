@@ -14,14 +14,14 @@ namespace _02_KomodoClaims_Test
         public void Arrange()
         {
             _repo = new ClaimsRepository();
-            _claim = new Claims(1, ClaimType.Home, "Home fire", 4000, Convert.ToDateTime(03 / 12 / 2020), Convert.ToDateTime(06 / 12 / 2020));
+            _claim = new Claims(1, ClaimType.Home, "Home fire", 4000, DateTime.Parse("06/11/2020"), DateTime.Parse("06/12/2020"));
 
-            _repo.AddClaimToList(_claim);
+            _repo.AddClaimToQueue(_claim);
         }
 
         //Add Method
         [TestMethod]
-        public void AddToList_ShouldBeNotNull()
+        public void AddToQueue_ShouldBeNotNull()
         {
             //Arrange
             Claims claim = new Claims();
@@ -29,7 +29,7 @@ namespace _02_KomodoClaims_Test
             ClaimsRepository repo = new ClaimsRepository();
 
             //Act
-            repo.AddClaimToList(claim);
+            repo.AddClaimToQueue(claim);
             Claims claimFromDir = repo.GetClaimsByClaimID(1);
 
             //Assert
@@ -38,14 +38,14 @@ namespace _02_KomodoClaims_Test
 
         //Update Method
         [TestMethod]
-        public void UpdateExistingList_ShouldReturnTrue()
+        public void UpdateExistingQueue_ShouldReturnTrue()
         {
             //Arrange
             //TestInitialize
-            Claims newClaim = new Claims(1, ClaimType.Car, "Home fire", 5000, Convert.ToDateTime(03 / 12 / 2020), Convert.ToDateTime(06 / 12 / 2020));
+            Claims newClaim = new Claims(1, ClaimType.Car, "Home fire", 5000, DateTime.Parse("06/11/2020"), DateTime.Parse("06/12/2020"));
 
             //Act
-            bool updateResult = _repo.UpdateExistingList(1, newClaim);
+            bool updateResult = _repo.UpdateExistingQueue(1, newClaim);
 
             //Assert
             Assert.IsTrue(updateResult);
@@ -54,14 +54,14 @@ namespace _02_KomodoClaims_Test
         [DataTestMethod]
         [DataRow(1, true)]
         [DataRow(32, false)]
-        public void UpdateExistingList_ShouldMatchGivenBool(string originalID, bool shouldUpdate)
+        public void UpdateExistingQueue_ShouldMatchGivenBool(int originalID, bool shouldUpdate)
         {
             //Arrange
             //TestInitialize
-            Claims newClaim = new Claims(1, ClaimType.Car, "Home fire", 5000, Convert.ToDateTime(03 / 12 / 2020), Convert.ToDateTime(06 / 12 / 2020));
+            Claims newClaim = new Claims(1, ClaimType.Car, "Home fire", 5000, DateTime.Parse("06/11/2020"), DateTime.Parse("06/12/2020"));
 
             //Act
-            bool updateResult = _repo.UpdateExistingList(1, newClaim);
+            bool updateResult = _repo.UpdateExistingQueue(originalID, newClaim);
 
             //Assert
             Assert.AreEqual(shouldUpdate, updateResult);
@@ -71,7 +71,7 @@ namespace _02_KomodoClaims_Test
         public void DeleteClaim_ShouldReturnTrue()
         {
             //Act
-            bool deleteResult = _repo.RemoveClaimFromList(_claim.ClaimID);
+            bool deleteResult = _repo.RemoveClaimFromQueue(_claim.ClaimID);
 
             //Assert
             Assert.IsTrue(deleteResult);
