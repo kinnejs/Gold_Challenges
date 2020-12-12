@@ -121,9 +121,9 @@ namespace _01_KomodoCafe_Console
             ViewMenuItems();
             //Get number to delete
             Console.WriteLine("\nEnter the Name of the Item you want to Remove:");
-            string name = Console.ReadLine().ToLower();
+            string itemAsString = Console.ReadLine();
 
-            bool wasDeleted = _menuRepo.RemoveItemFromMenu(name);
+            bool wasDeleted = _menuRepo.RemoveItemFromMenu(itemAsString);
            
             if(wasDeleted)
             {

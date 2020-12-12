@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _02_KomodoClaims_Console
 {
-    class ProgramUI
+    public class ProgramUI
     {
         private ClaimsRepository _claimsRepo = new ClaimsRepository();
 
@@ -32,7 +32,7 @@ namespace _02_KomodoClaims_Console
                 //Get User Input
                 string input = Console.ReadLine();
                 //Evaluate
-                switch(input)
+                switch (input)
                 {
                     case "1":
                         SeeAllClaims();
@@ -60,13 +60,14 @@ namespace _02_KomodoClaims_Console
         {
             Console.Clear();
 
-            var header = String.Format("{0,-12}{1,8}{2,12}{1,8}{2,12}{3,14}{2,12}\n" +
+            var header = String.Format("{0,8}{1,8}{2,35}{3,10}{4,20}{5,20}{6,15}",
                 "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid");
             Console.WriteLine(header);
 
-            foreach(var claim in Claims)
+            foreach (var claim in _claimsRepo.GetClaimsQueue())
             {
-                var output = String.Format("{0,-12}{1,8}{2,12}{1,8}{2,12}{3,14}{2,12}"), 
+                var output = string.Format("{0,8}{1,8}{2,35}{3,10}{4,20}{5,20}{6,15}", claim.ClaimID, claim.TypeOfClaim, claim.Description, claim.ClaimAmount, claim.DateOfIncident.Date.ToString("d"), claim.DateOfClaim.Date.ToString("d"), claim.IsValid);
+                Console.WriteLine(output);
             }
 
         }
@@ -74,7 +75,37 @@ namespace _02_KomodoClaims_Console
         private void TakeCareOfClaim()
         {
             Console.Clear();
+            Claims claim = _claimsRepo.GetClaimsQueue().Peek();
 
+            Console.WriteLine($"ClaimID: {claim.ClaimID}\n" +
+                $"Type: {claim.TypeOfClaim}\n" +
+                $"Description: {claim.Description}\n" +
+                $"Amount: {claim.ClaimAmount}\n" +
+                $"Date of Accident: {claim.DateOfIncident}\n" +
+                $"Date of Claim: {claim.DateOfClaim}\n" +
+                $"Claim is Valid: {claim.IsValid}");
+
+            Console.WriteLine("\nDo You Want to Deal with this Claim Now(y/n):");
+
+            bool keepRunning = true;
+            while (keepRunning)
+            {
+                string answer = Console.ReadLine().ToLower();
+                if(answer == "y")
+                {
+                    _claimsRepo.GetClaimsQueue().Dequeue();
+                    keepRunning = false;
+                }
+                else if(answer =="n")
+                {
+                    keepRunning = false;
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Response");
+                }
+            }
+            
         }
 
         public void AddNewClaim()
@@ -119,7 +150,7 @@ namespace _02_KomodoClaims_Console
             DateTime claimDateAsDateTime = DateTime.Parse(claimDateAsString);
             newClaim.DateOfClaim = (DateTime)claimDateAsDateTime;
 
-
+            _claimsRepo.AddClaimToQueue(newClaim);
         }
 
         //Seed Method
