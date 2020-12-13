@@ -77,7 +77,8 @@ namespace _02_KomodoClaims_Console
             Console.Clear();
             Claims claim = _claimsRepo.GetClaimsQueue().Peek();
 
-            Console.WriteLine($"ClaimID: {claim.ClaimID}\n" +
+            Console.WriteLine($"Here are the Details for the Next Claim to be Handled:\n" +
+                $"\nClaimID: {claim.ClaimID}\n" +
                 $"Type: {claim.TypeOfClaim}\n" +
                 $"Description: {claim.Description}\n" +
                 $"Amount: {claim.ClaimAmount}\n" +
