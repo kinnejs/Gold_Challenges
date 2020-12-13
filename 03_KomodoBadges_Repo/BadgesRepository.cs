@@ -36,6 +36,19 @@ namespace _03_KomodoBadges_Repo
             door.Remove(access);
         }
 
+        //Helper Method
+        public List<string> GetAccessByBadge(int badge)
+        {
+            foreach(KeyValuePair<int, List<string>> id in _access)
+            {
+                if (id.Key == badge)
+                {
+                    return id.Value;
+                }
+            }
+            return null;
+        }
+
         
     }
 }
