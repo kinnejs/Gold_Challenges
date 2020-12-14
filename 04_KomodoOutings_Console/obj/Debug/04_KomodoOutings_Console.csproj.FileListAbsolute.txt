@@ -1,0 +1,10 @@
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\obj\Debug\04_KomodoOutings_Console.csprojAssemblyReference.cache
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\obj\Debug\04_KomodoOutings_Console.csproj.CoreCompileInputs.cache
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\bin\Debug\04_KomodoOutings_Console.exe.config
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\bin\Debug\04_KomodoOutings_Console.exe
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\bin\Debug\04_KomodoOutings_Console.pdb
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\bin\Debug\04_KomodoOutings_Repo.dll
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\bin\Debug\04_KomodoOutings_Repo.pdb
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\obj\Debug\04_KomodoOutings_Console.csproj.CopyComplete
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\obj\Debug\04_KomodoOutings_Console.exe
+C:\Users\kinne\OneDrive\Desktop\ElevenFiftyProjects\Gold Challenges\Komodo\04_KomodoOutings_Console\obj\Debug\04_KomodoOutings_Console.pdb

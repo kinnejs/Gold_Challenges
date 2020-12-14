@@ -7,7 +7,7 @@
     <ProjectGuid>{433DF201-6A5D-4911-BA0A-C54D8E800C3E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_04_KomodoOutings_Console</RootNamespace>
-    <AssemblyName>_04_KomodoOutings_Console</AssemblyName>
+    <AssemblyName>04_KomodoOutings_Console</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,10 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\04_KomodoOutings_Repo\04_KomodoOutings_Repo.csproj">
+      <Project>{c938de6e-0a87-45dd-9bac-3435c2ef17b5}</Project>
+      <Name>04_KomodoOutings_Repo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
