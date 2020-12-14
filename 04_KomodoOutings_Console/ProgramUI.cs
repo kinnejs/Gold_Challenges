@@ -157,13 +157,23 @@ namespace _04_KomodoOutings_Console
         public void TotalExpenses()
         {
             Console.Clear();
-            
+            double total = _listOfOutings.Sum(outing => outing.TotalCost);
+            Console.WriteLine("The Total Expenses from All Outings are:\n" + total);
         }
 
         public void ExpensesByOutingType()
         {
             Console.Clear();
+            double golfTotal = _listOfOutings.Where(outing => outing.OutingType = 1).Sum(outing => outing.TotalCost);
+            double bowlingTotal = _listOfOutings.Where(outing => outing.OutingType = 2).Sum(outing => outing.TotalCost);
+            double amusementParkTotal = _listOfOutings.Where(outing => outing.OutingType = 3).Sum(outing => outing.TotalCost);
+            double concertTotal = _listOfOutings.Where(outing => outing.OutingType = 4).Sum(outing => outing.TotalCost);
 
+            Console.WriteLine($"The Totals for Each Outing Type are as Follows:\n" +
+                $"Golf: "+golfTotal +
+                $"\nBowling: "+bowlingTotal +
+                $"\nAmusement Park: " + amusementParkTotal +
+                $"\nConcert: " + concertTotal);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace _04_KomodoOutings_Repo
 {
     public class OutingsRepo
     {
-        private List<Outings> _listOfOutings = new List<Outings>();
+        public List<Outings> _listOfOutings = new List<Outings>();
 
         //Create Outing
         public void AddOuting(Outings outing)
