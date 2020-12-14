@@ -22,6 +22,27 @@ namespace _04_KomodoOutings_Repo
             return _listOfOutings;
         }
 
+        //Update
+        public bool UpdateOuting(string originalOuting, Outings newOuting)
+        {
+            Outings oldOuting = GetOutingByName(originalOuting);
+
+            if(oldOuting != null)
+            {
+                oldOuting.OutingName = newOuting.OutingName;
+                oldOuting.TypeOfOuting = newOuting.TypeOfOuting;
+                oldOuting.NumberOfPeople = newOuting.NumberOfPeople;
+                oldOuting.Date = newOuting.Date;
+                oldOuting.CostPerPerson = newOuting.CostPerPerson;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Delete
         public bool RemoveOuting(string name)
         {
